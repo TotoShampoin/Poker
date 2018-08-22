@@ -62,13 +62,13 @@ void shuffle()
 		}
 		APlot(4+j,24,20,1);
 	}
-	APlot(4,24," ",32);
+	APlot(4,24,' ',32);
 }
 
-function pause(int ps){
+void pause(int ps){
 	for(i=0;i<ps;i++)
-		for(j=0;j<256;j++)	;
-
+		for(j=0;j<256;j++)
+			;
 }
 
 void main()
@@ -148,9 +148,9 @@ void main()
 				selec = 0;
 		}
 		allPlay = curs;
-		APlot(9,25," ",5);
-		APlot(26,25," ",5);
-		APlot(9,27," ",32);
+		APlot(9,25,' ',5);
+		APlot(26,25,' ',5);
+		APlot(9,27,' ',32);
 		if(allPlay == 1)
 			for(i=0;i<nbPlayers;i++) p[i].play = allPlay;
 		else {
@@ -175,7 +175,7 @@ void main()
 					p[i].play = 0;
 					APlot(2,2+i,0,1);
 					APlot(1,2+i,23,1);
-					APlot(20,2+i," ",11);
+					APlot(20,2+i,' ',11);
 				}
 
 				kee = get();
@@ -187,7 +187,7 @@ void main()
 					selec = 0;
 			}
 		}
-		APlot(9,27," ",22);
+		APlot(9,27,' ',22);
 		
 		AdvancedPrint(7,23,"    DISTRIBUTION...        ");
 		crd = 0;
@@ -205,7 +205,7 @@ void main()
 		}
 		pause(4);
 			
-		APlot(8,23," ",23);
+		APlot(8,23,' ',23);
 		for(k=0;k<5;k++)
 			printCard( 2+k*6, 9, NOCARD, VIDE);
 		
@@ -224,7 +224,7 @@ void main()
 		
 				
 		//Pi Play
-		for(i=0;i<nbPLayers;i++){
+		for(i=0;i<nbPlayers;i++){
 			for(j=16;j<22;j++) {
 				APlot(2,j,5,1);
 				APlot(3,j,109,34);
@@ -238,8 +238,8 @@ void main()
 				get();
 				for(j=16;j<22;j++)
 					APlot(2,j,23,35);
-				APlot(8,23," ",18);
-				APlot(8,25," ",22);		
+				APlot(8,23,' ',18);
+				APlot(8,25,' ',22);		
 				APlot(1,2,22,1);
 				printCard( 2+6, 16, NOCARD, VIDE);
 				printCard( 2+2*6, 16, NOCARD, VIDE);
@@ -326,7 +326,7 @@ void main()
 				}
 			
 				for(k=23;k<28;k++)
-					APlot(3,k," ",36);
+					APlot(3,k,' ',36);
 			}
 			
 			for(i=0;i<nbPlayers;i++)
@@ -334,7 +334,7 @@ void main()
 		}	
 			
 		for(k=23;k<28;k++)
-			APlot(3,k," ",36);
+			APlot(3,k,' ',36);
 		
 		
 		get();
