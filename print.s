@@ -193,13 +193,12 @@ _APlot
 	lda (sp),y
 
 	
-	; Write the character on screen
+	; Write the character x times on screen
 loop1
+	dex
+	sta $0123,x
 	cpx #0
 	beq end_loop_plot
-writP
-	sta $0123,x
-	dex
 	jmp loop1
 end_loop_plot
 	rts
