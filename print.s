@@ -149,7 +149,7 @@ write
 	; Finished !
 end_loop_char
 	rts
-).	
+.)
 	
 ;
 ; The message and display position will be read from the stack.
@@ -203,4 +203,4 @@ writP
 	jmp loop1
 end_loop_plot
 	rts
-).
+.)
