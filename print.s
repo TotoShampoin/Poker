@@ -196,6 +196,7 @@ _APlot
 	; Write the character x times on screen
 loop1
 	dex
+writP
 	sta $0123,x
 	cpx #0
 	beq end_loop_plot
