@@ -93,7 +93,7 @@ ScreenAdressHigh
 ; sp+4 => Adress of the message to display
 ;
 _AdvancedPrint
-
+.(
 	; Initialise display adress
 	; this uses self-modifying code
 	; (the $0123 is replaced by display adress)
@@ -149,16 +149,17 @@ write
 	; Finished !
 end_loop_char
 	rts
-	
+).	
 	
 ;
 ; The message and display position will be read from the stack.
 ; sp+0 => X coordinate
 ; sp+2 => Y coordinate
 ; sp+4 => Char to display
+; sp+6 => number of times to repeat char
 ;
 _APlot
-
+.(
 	; Initialise display adress
 	; this uses self-modifying code
 	; (the $0123 is replaced by display adress)
@@ -181,16 +182,25 @@ _APlot
 	adc #0					; Eventually add the carry to complete the 16 bits addition
 	sta writP+2				
 
+	ldy #6
+	lda (sp),y
+	tax
+	
 	; Initialise message adress using the stack parameter
 	; this uses self-modifying code
 	; (the $0123 is replaced by message adress)
 	ldy #4
 	lda (sp),y
+
 	
 	; Write the character on screen
+loop1
+	cpx #0
+	beq end_loop_plot
 writP
-	sta $0123
+	sta $0123,x
+	dex
+	jmp loop1
+end_loop_plot
 	rts
-
-
-
+).
