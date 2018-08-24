@@ -28,9 +28,9 @@ unsigned int cards[52], table[5];
 unsigned char nbPlayers, turn, selec, allPlay, cont;
 
 Player p [4] = {{"P1", 0, 0, 600, 0, 1},
-		 {"P2", 0, 0, 600, 0, 1},
-		 {"P3", 0, 0, 600, 0, 1},
-		 {"P4", 0, 0, 600, 0, 1}
+				{"P2", 0, 0, 600, 0, 1},
+				{"P3", 0, 0, 600, 0, 1},
+				{"P4", 0, 0, 600, 0, 1}
 };
 
 char *strJoue   = "JOUE       ";
